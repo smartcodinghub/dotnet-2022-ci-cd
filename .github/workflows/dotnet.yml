@@ -154,7 +154,7 @@ jobs:
       with:        
         scope: resourcegroup
         subscriptionId: '26da47a8-c28d-4564-ae8e-8ba88e995a0a'     
-        resourceGroupName: 'DotNet2022_Dev_RG'
+        resourceGroupName: 'DotNet2022_Pro_RG'
         template: arm_template/netcore_no_docker_rg_arm.json
         deploymentMode: Incremental
         deploymentName: deploy-${{ github.run_id }}
