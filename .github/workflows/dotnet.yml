@@ -97,13 +97,13 @@ jobs:
     - name: Azure WebApp
       uses: Azure/webapps-deploy@v2
       with:
-        app-name: $${{ env.site }}      
+        app-name: ${{ env.site }}      
         package: web_site
 
     - name: Azure App Service Settings
       uses: Azure/appservice-settings@v1
       with:
-        app-name: $${{ env.site }}
+        app-name: ${{ env.site }}
         connection-strings-json: ${{ secrets.CONNSTRING_JSON }}
 
     - name: Azure SQL Deploy
