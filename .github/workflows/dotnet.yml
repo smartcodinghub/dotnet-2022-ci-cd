@@ -54,7 +54,7 @@ jobs:
         name: arm_template
         path: arm
     
-  deploy_nodocker:
+  deploy_dev:
     needs: build
     environment: dev
     runs-on: windows-latest
