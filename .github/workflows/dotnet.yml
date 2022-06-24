@@ -7,7 +7,13 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  build:      
+    strategy:
+      # Cancel all matrix jobs if one of them fails
+      fail-fast: true
+      matrix:
+        dotnet-version: ['3.1.402', '6.x']
+        
     runs-on: ubuntu-latest
     env:
       build_config: Release
@@ -16,7 +22,9 @@ jobs:
     
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v2.1.0
-    
+      with: 
+        dotnet-version: ${{ matrix.dotnet-version }}
+        
     - name: Install dotnet tools
       run: dotnet tool restore
       
