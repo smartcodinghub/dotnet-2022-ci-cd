@@ -55,8 +55,7 @@ jobs:
         path: arm
     
   deploy_dev:
-    needs: build
-    environment: dev
+    needs: build    
     uses: ./.github/workflows/template-deploy.yml
     with:
       site-name: dotnet2022dev
@@ -70,7 +69,6 @@ jobs:
 
   deploy_pro:
     needs: deploy_dev
-    environment: pro
     uses: ./.github/workflows/template-deploy.yml
     with:
       site-name: dotnet2022pro
