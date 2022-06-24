@@ -74,6 +74,7 @@ jobs:
       site-name: dotnet2022dev
       sql-name: dotnet22devsql
       resource-group: DotNet2022_Dev_RG
+      version-to-deploy: '3.1.420-ubuntu-22.04'
     secrets:
       AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
       DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
@@ -90,6 +91,7 @@ jobs:
       site-name: dotnet2022pro
       sql-name: dotnet22prosql
       resource-group: DotNet2022_Pro_RG
+      version-to-deploy: '3.1.420-ubuntu-22.04'
     secrets:
       AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
       DB_PASSWORD: ${{ secrets.DB_PASSWORD }}

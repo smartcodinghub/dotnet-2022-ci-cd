@@ -15,6 +15,9 @@ on:
       resource-group:
         required: true
         type: string
+      version-to-deploy:
+        required: true
+        type: string
     secrets:
       AZURE_CREDENTIALS:
         required: true
@@ -37,17 +40,17 @@ jobs:
     - name: Download scripts
       uses: actions/download-artifact@v2
       with:
-        name: sql_scripts
+        name: sql_scripts-${{ inputs.version-to-deploy }}
         path: sql_scripts
     - name: Download site
       uses: actions/download-artifact@v2
       with:
-        name: web_site
+        name: web_site-${{ inputs.version-to-deploy }}
         path: web_site
     - name: Download arm
       uses: actions/download-artifact@v2
       with:
-        name: arm_template
+        name: arm_template-${{ inputs.version-to-deploy }}
         path: arm_template
     
     - name: 'Login via Azure CLI'
