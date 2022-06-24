@@ -3,6 +3,7 @@ name: CI/CD .Net Core
 on: 
   workflow_dispatch:
   push:
+    branches-ignore: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -55,7 +56,7 @@ jobs:
         path: arm
     
   deploy_dev:
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' || (github.ref == 'refs/heads/main' && github.event_name == 'push')
     needs: build    
     uses: ./.github/workflows/template-deploy.yml
     with:
