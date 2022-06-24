@@ -15,15 +15,15 @@ on:
       resource-group:
         required: true
         type: string
-    secrets:
-      DB_PASSWORD:
-        required: true
-      CONNSTRING_JSON:
-        required: true
-      CATALOG_DB_CONNSTRING:
-        required: true
-      IDENTITY_DB_CONNSTRING:
-        required: true
+    # secrets:
+    #   DB_PASSWORD:
+    #     required: true
+    #   CONNSTRING_JSON:
+    #     required: true
+    #   CATALOG_DB_CONNSTRING:
+    #     required: true
+    #   IDENTITY_DB_CONNSTRING:
+    #     required: true
 jobs:
   deploy:
     environment: ${{ inputs.environment-to-deploy }}
