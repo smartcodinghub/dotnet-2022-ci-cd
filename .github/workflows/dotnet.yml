@@ -121,7 +121,7 @@ jobs:
         sql-file: sql_scripts/identity.sql
         
   deploy_pro:
-    needs: build
+    needs: deploy_dev
     environment: pro
     runs-on: windows-latest
     env:
