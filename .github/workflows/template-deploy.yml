@@ -3,6 +3,9 @@ name: Base deploy template
 on:
   workflow_call:
     inputs:
+      environment-to-deploy:
+        required: true
+        type: string
       site-name:
         required: true
         type: string
@@ -23,6 +26,7 @@ on:
         required: true
 jobs:
   deploy:
+    environment: ${{ inputs.environment-to-deploy }}
     runs-on: windows-latest
     env:
       site: ${{ inputs.site-name }}

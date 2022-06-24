@@ -58,6 +58,7 @@ jobs:
     needs: build    
     uses: ./.github/workflows/template-deploy.yml
     with:
+      environment-to-deploy: dev
       site-name: dotnet2022dev
       sql-name: dotnet22devsql
       resource-group: DotNet2022_Dev_RG
@@ -71,6 +72,7 @@ jobs:
     needs: deploy_dev
     uses: ./.github/workflows/template-deploy.yml
     with:
+      environment-to-deploy: pro
       site-name: dotnet2022pro
       sql-name: dotnet22prosql
       resource-group: DotNet2022_Pro_RG
