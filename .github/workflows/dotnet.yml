@@ -12,7 +12,7 @@ jobs:
       fail-fast: true
       matrix:
         dotnet-version: ['3.1.402', '3.1.420']
-        runner-os: [ 'ubuntu-22.04','windows-2019' ]
+        runner-os: [ 'ubuntu-22.04','ubuntu-20.04' ]
         exclude:
           - dotnet-version: '3.1.402'
             runner-os: 'ubuntu-22.04'
