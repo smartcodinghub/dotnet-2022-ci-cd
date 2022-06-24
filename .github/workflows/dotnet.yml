@@ -50,14 +50,14 @@ jobs:
     - name: Upload scripts
       uses: actions/upload-artifact@v3.1.0
       with:
-        name: sql_scripts
-        path: ./scripts-${{ matrix.dotnet-version }}-${{ matrix.runner-os }}
+        name: sql_scripts-${{ matrix.dotnet-version }}-${{ matrix.runner-os }}
+        path: ./scripts
     
     - name: Upload site
       uses: actions/upload-artifact@v3.1.0
       with:
-        name: web_site
-        path: ./web_publish-${{ matrix.dotnet-version }}-${{ matrix.runner-os }}
+        name: web_site-${{ matrix.dotnet-version }}-${{ matrix.runner-os }}
+        path: ./web_publish
     
     - name: Upload ARM
       uses: actions/upload-artifact@v3.1.0
