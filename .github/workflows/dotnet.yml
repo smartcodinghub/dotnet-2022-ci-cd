@@ -62,11 +62,12 @@ jobs:
       site-name: dotnet2022dev
       sql-name: dotnet22devsql
       resource-group: DotNet2022_Dev_RG
-    # secrets:
-    #   DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-    #   CONNSTRING_JSON: ${{ secrets.CONNSTRING_JSON }}
-    #   CATALOG_DB_CONNSTRING: ${{ secrets.CATALOG_DB_CONNSTRING }}
-    #   IDENTITY_DB_CONNSTRING: ${{ secrets.IDENTITY_DB_CONNSTRING }}
+    secrets:
+      AZURE_CREDENTIALS: ${{ secret.AZURE_CREDENTIALS }}
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      CONNSTRING_JSON: ${{ secrets.CONNSTRING_JSON }}
+      CATALOG_DB_CONNSTRING: ${{ secrets.CATALOG_DB_CONNSTRING }}
+      IDENTITY_DB_CONNSTRING: ${{ secrets.IDENTITY_DB_CONNSTRING }}
 
   deploy_pro:
     needs: deploy_dev
@@ -76,8 +77,9 @@ jobs:
       site-name: dotnet2022pro
       sql-name: dotnet22prosql
       resource-group: DotNet2022_Pro_RG
-    # secrets:
-    #   DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-    #   CONNSTRING_JSON: ${{ secrets.CONNSTRING_JSON }}
-    #   CATALOG_DB_CONNSTRING: ${{ secrets.CATALOG_DB_CONNSTRING }}
-    #   IDENTITY_DB_CONNSTRING: ${{ secrets.IDENTITY_DB_CONNSTRING }}
+    secrets:
+      AZURE_CREDENTIALS: ${{ secret.AZURE_CREDENTIALS }}
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      CONNSTRING_JSON: ${{ secrets.CONNSTRING_JSON }}
+      CATALOG_DB_CONNSTRING: ${{ secrets.CATALOG_DB_CONNSTRING }}
+      IDENTITY_DB_CONNSTRING: ${{ secrets.IDENTITY_DB_CONNSTRING }}
